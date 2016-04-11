@@ -1,0 +1,13 @@
+$TTL   <%= @ttl %>
+@   IN  SOA   <%= @zone_name %>.  root.<%= @zone_name %>. (
+                      <%= @serial %>      ; Serial
+                      <%= @refresh %>     ; refresh
+                      <%= @retry %>       ; retry
+                      <%= @expire %>      ; expire
+                      <%= @minimum %> )   ; minimum
+;
+; NS records
+<% for @nsrecord in @nsrecords %> <%= @nsrecord %>; <% end %>
+;
+; A records
+<% for @arecord in @arecords %> <%= @arecord %>; <% end %>

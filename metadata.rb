@@ -1,0 +1,6 @@
+name             'mb_bind'
+maintainer       'Marcus Beach'
+maintainer_email 'mrbeach.marcus@gmail.com'
+description      'Installs/Configures local_bind'
+version          '1.0.0'
+supports 'centos'

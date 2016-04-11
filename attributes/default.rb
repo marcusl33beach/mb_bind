@@ -1,0 +1,11 @@
+default['bind']['zone_name'] = ''
+default['bind']['allow_query'] = []
+default['bind']['forwarders'] = []
+default['bind']['serial'] = 5
+default['bind']['ns_records'] = []
+default['bind']['a_records'] = []
+default['bind']['refresh'] = '1H'
+default['bind']['retry'] = '1M'
+default['bind']['expire'] = '1W'
+default['bind']['ttl'] = '86400'
+default['bind']['minimum'] = '1D'
