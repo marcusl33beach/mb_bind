@@ -11,14 +11,8 @@ package 'bind' do
   action :install
 end
 
-# Start up the named service and enable it for restart
-service 'named' do
-  supports :status => true
-  action [ :enable, :start ]
-end
-
 # Write out named.conf file
-template '/var/named/named.conf' do
+template '/etc/named.conf' do
   source 'named.conf.erb'
   owner 'named'
   group 'named'
@@ -50,4 +44,10 @@ template "/var/named/#{node['bind']['zone_name']}.zone" do
     :minimum => node['bind']['minimum']
   })
   notifies :reload, 'service[named]'
+end
+
+# Start up the named service and enable it for restart
+service 'named' do
+  supports :status => true
+  action [ :enable, :start ]
 end

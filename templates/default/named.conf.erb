@@ -9,9 +9,9 @@ options {
         dump-file       "/var/named/data/cache_dump.db";
         statistics-file "/var/named/data/named_stats.txt";
         memstatistics-file "/var/named/data/named_mem_stats.txt";
-        allow_query {<% for @ip in @allowquery %><%= @ip %> <% end %>};
+        allow_query { <% for @ip in @allowquery %><%= @ip %> <% end %> };
         recursion no;
-        forwarders {<% for @ip in  @forwarders %><%= @ip %> <% end %>};
+        forwarders { <% for @ip in  @forwarders %><%= @ip %> <% end %> };
         allow-recursion { any; };
 
         dnssec-enable yes;
