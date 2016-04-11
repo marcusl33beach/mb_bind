@@ -7,7 +7,11 @@ $TTL   <%= @ttl %>
                       <%= @minimum %> )   ; minimum
 ;
 ; NS records
-<% for @nsrecord in @nsrecords %> <%= @nsrecord %> <% end %>
+<% @nsrecords.each do |nsrecord| %>
+<%= nsrecord %>
+<% end %>
 ;
 ; A records
-<% for @arecord in @arecords %> <%= @arecord %> <% end %>
+<% @arecords.each do |arecord| %>
+<%= arecord %>
+<% end %>
