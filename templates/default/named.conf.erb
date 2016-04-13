@@ -10,7 +10,7 @@ options {
         statistics-file "/var/named/data/named_stats.txt";
         memstatistics-file "/var/named/data/named_mem_stats.txt";
         allow-query { <% for @ip in @allowquery %><%= @ip %> <% end %> };
-        recursion no;
+        recursion yes;
         forwarders { <% for @ip in  @forwarders %><%= @ip %> <% end %> };
         allow-recursion { any; };
 
