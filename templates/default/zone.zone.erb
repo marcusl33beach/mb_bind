@@ -1,11 +1,11 @@
 $TTL   <%= @ttl %>
-@   IN  SOA   <%= @zone_name %>.  root.<%= @zone_name %>. (
+@   IN  SOA   <%= @nsserver %>  root.<%= @zone_name %>. (
                       <%= @serial %>      ; Serial
                       <%= @refresh %>     ; refresh
                       <%= @retry %>       ; retry
                       <%= @expire %>      ; expire
-                      <%= @minimum %> )   ; minimum
-;
+                      <%= @minimum %>    ; minimum
+);
 ; NS records
 <% @nsrecords.each do |nsrecord| %>
 <%= nsrecord %>

@@ -4,6 +4,7 @@ default['bind']['forwarders'] = []
 default['bind']['serial'] = 5
 default['bind']['ns_records'] = []
 default['bind']['a_records'] = []
+default['bind']['nsserver'] = ''
 default['bind']['refresh'] = '1H'
 default['bind']['retry'] = '1M'
 default['bind']['expire'] = '1W'

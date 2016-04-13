@@ -41,7 +41,8 @@ template "/var/named/#{node['bind']['zone_name']}.zone" do
     :retry => node['bind']['retry'],
     :expire => node['bind']['expire'],
     :ttl => node['bind']['ttl'],
-    :minimum => node['bind']['minimum']
+    :minimum => node['bind']['minimum'],
+    :nsserver => namw['bind']['nsserver']
   })
   notifies :reload, 'service[named]'
 end
