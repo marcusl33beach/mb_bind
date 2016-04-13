@@ -38,8 +38,8 @@ zone "." IN {
 
 zone "<%= @zone_name %>" IN {
         type master;
-        file "/var/named/<%= @zone_name %>.zone";
-        allow-update { none; };
+        file ""<%= @zone_name %>.zone";
+        notify no;
 };
 
 include "/etc/named.rfc1912.zones";
