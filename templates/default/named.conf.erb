@@ -38,7 +38,7 @@ zone "." IN {
 
 zone "<%= @zone_name %>" IN {
         type master;
-        file ""<%= @zone_name %>.zone";
+        file "<%= @zone_name %>.zone";
         notify no;
 };
 
