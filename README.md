@@ -2,4 +2,4 @@
 
 ## Description
 
-Bind coobook to easy deploy a manage Bind DNS server.
+Bind coobook to easy deploy and manage Bind DNS server.
