@@ -23,7 +23,7 @@ template '/etc/named.conf' do
     :forwarders => node['bind']['forwarders'],
     :zone_name => node['bind']['zone_name']
   })
-  notifies :reload, 'service[named]'
+  notifies :restart, 'service[named]'
 end
 
 # Write out the marcusbeach.co zone
@@ -44,7 +44,7 @@ template "/var/named/#{node['bind']['zone_name']}.zone" do
     :minimum => node['bind']['minimum'],
     :nsserver => node['bind']['nsserver']
   })
-  notifies :reload, 'service[named]'
+  notifies :restart, 'service[named]'
 end
 
 # write out the resolve.conf
