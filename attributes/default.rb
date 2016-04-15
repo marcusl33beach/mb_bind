@@ -10,3 +10,5 @@ default['bind']['retry'] = '1M'
 default['bind']['expire'] = '1W'
 default['bind']['ttl'] = '86400'
 default['bind']['minimum'] = '1D'
+default['bind']['nameservers'] = []
+default['bind']['domain'] = ''

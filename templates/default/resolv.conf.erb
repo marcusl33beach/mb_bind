@@ -1,0 +1,9 @@
+;
+; This file is managed by Chef
+; Any changes made by hand will be overwritten
+;
+
+search <%= @domain %>
+<% @nameservers.each do |nameserver| %>
+nameserver <%= nameserver %>
+<% end %>

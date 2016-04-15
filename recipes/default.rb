@@ -47,6 +47,18 @@ template "/var/named/#{node['bind']['zone_name']}.zone" do
   notifies :reload, 'service[named]'
 end
 
+# write out the resolve.conf
+template '/etc/resolv.conf' do
+  source 'resolv.conf.erb'
+  owner 'root'
+  group 'root'
+  mode 00644
+  variables({
+    :domain => node['bind']['domain'],
+    :nameservers => node['bind']['nameservers']
+  })
+end
+
 # Start up the named service and enable it for restart
 service 'named' do
   supports :status => true
