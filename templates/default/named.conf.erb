@@ -1,6 +1,5 @@
 options {
         listen-on port 53 { 127.0.0.1; <%= @ipaddress %>; };
-        listen-on-v6 port 53 { ::1; };
         directory       "/var/named";
         dump-file       "/var/named/data/cache_dump.db";
         statistics-file "/var/named/data/named_stats.txt";
@@ -10,10 +9,6 @@ options {
         forwarders { <% for @ip in  @forwarders %><%= @ip %> <% end %> };
         allow-recursion { any; };
 
-        /* Path to ISC DLV key */
-        bindkeys-file "/etc/named.iscdlv.key";
-
-        managed-keys-directory "/var/named/dynamic";
 };
 
 logging {
@@ -30,7 +25,7 @@ zone "." IN {
 
 zone "<%= @zone_name %>" IN {
         type master;
-        file "/var/named/<%= @zone_name %>.zone";
+        file "<%= @zone_name %>.zone";
         notify no;
 };
 
