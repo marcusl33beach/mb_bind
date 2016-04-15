@@ -1,8 +1,3 @@
-//
-// This file is managed by Chef
-// Any changes made by hand will be overwritten
-//
-
 options {
         listen-on port 53 { 127.0.0.1; <%= @ipaddress %>; };
         # listen-on-v6 port 53 { ::1; };
@@ -15,9 +10,9 @@ options {
         forwarders { <% for @ip in  @forwarders %><%= @ip %> <% end %> };
         allow-recursion { any; };
 
-        dnssec-enable yes;
-        dnssec-validation yes;
-        dnssec-lookaside auto;
+        # dnssec-enable yes;
+        # dnssec-validation yes;
+        # dnssec-lookaside auto;
 
         /* Path to ISC DLV key */
         bindkeys-file "/etc/named.iscdlv.key";
@@ -39,7 +34,7 @@ zone "." IN {
 
 zone "<%= @zone_name %>" IN {
         type master;
-        file "<%= @zone_name %>.zone";
+        file "/var/named/<%= @zone_name %>.zone";
         notify no;
 };
 
